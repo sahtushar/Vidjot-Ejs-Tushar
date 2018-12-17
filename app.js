@@ -10,7 +10,9 @@ const users =require('./routes/users');
 const session = require('express-session');
 const passport=require('passport');
 //view engine
-mongoose.connect(db.mongoURI, {})
+mongoose.connect(db.mongoURI, {
+    useMongoClient:true
+})
 
     .then(() => console.log("mongoose connected to mongodb.."))
     .catch((err) => console.log(err));
