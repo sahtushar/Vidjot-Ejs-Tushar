@@ -71,7 +71,7 @@ app.use(methodOverride('_method'));
 app.get('/', (req, res) => {
     const title = "Vidjot By Tushar";
 
-    return res.render('Index', {
+    return res.render('index', {
         title: title
     });
 });
