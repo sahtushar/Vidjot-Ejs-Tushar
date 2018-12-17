@@ -1,0 +1,26 @@
+
+<%-include('../partials/header.ejs')%>
+
+<%-include('../partials/_navbar.ejs')%>
+<div class="container">
+    <div class="card card-body">
+        <h3>Video Idea</h3>
+        <!--<form action="/update/idea.id" method="post">-->
+            <form action="/ideas/<%=idea.id%>?_method=PUT" method="post">
+                <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name="title" value="<%=idea.title%>">
+            </div>
+            <div class="form-group">
+                <label for="details">Details</label>
+                <textarea class="form-control" name="details"><%=idea.details%></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+<%-include('../partials/footer.ejs')%>

@@ -1,0 +1,38 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/_navbar.ejs') %>
+<div class="container">
+
+    <% if(success_msg.length > 0){ %>
+
+    <div class="alert alert-success">
+        <%= success_msg %>
+
+    </div>
+    <% } %>
+
+    <% if(error_msg.length > 0){ %>
+
+    <div class="alert alert-danger">
+        <%= error_msg %>
+
+    </div>
+    <% } %>
+
+    <% count=0 %>
+    <% ideas.forEach(function (idea) { %>
+
+    <div class="card card-body mb-2">
+        <h4><%= idea.title %></h4>
+        <p style="color: darkgrey"><%= idea.details %></p>
+        <a style="width:100px" class="btn btn-dark mb-2" href="/ideas/edit/<%= idea.id %>">Edit</a>
+        <form action="/ideas/<%= idea.id %>?_method=DELETE" method="post" style="width:100%">
+            <!--<a type="submit" href="/delete/idea.id" class="btn btn-danger" >Delete</a>-->
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger" style="width:100px">Delete</button>
+        </form>
+    </div>
+
+    <% }) %>
+</div>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,42 @@
+<%-include('../partials/header.ejs')%>
+
+<%-include('../partials/_navbar.ejs')%>
+<div class="row">
+  <div class="col-md-6 mx-auto">
+
+    <%errors.forEach(function(error){%>
+
+    <div class="alert alert-danger"><%=error.text%></div>
+    <%})%>
+
+    <%if(success_msg.length>0){%>
+    <div class="alert alert-danger"><%= success_msg%></div>
+    <%}%>
+
+    <div class="card card-body">
+
+      <h3 class="text-center">Account Register</h3>
+      <form action="/users/register" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" required value="<%=name%>">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control" required value="<%=email%>">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" required value="<%=password%>">
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" name="password2" class="form-control" required value="<%=password2%>">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%-include('../partials/footer.ejs')%>
