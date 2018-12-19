@@ -10,8 +10,10 @@ const users =require('./routes/users');
 const session = require('express-session');
 const passport=require('passport');
 //view engine
+console.log("Mongo URLS",db.mongoURI);
 mongoose.connect(db.mongoURI, {
-    useMongoClient:true
+
+    useNewUrlParser:true
 })
 
     .then(() => console.log("mongoose connected to mongodb.."))
