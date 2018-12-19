@@ -3,8 +3,8 @@
 <div class="container">
 
 
-    <div class="card card-body mb-2">
-        <h2>Welcome <%=user.name%></h2>
+    <div class="card card-body mb-4">
+        <h2 class="mb-3" >Welcome <%=user.name%></h2>
         <a style="width:100px" class="btn btn-dark mb-2" href="/ideas/add/">Add Idea</a>
     </div>
     <% if(success_msg.length > 0){ %>
@@ -25,7 +25,7 @@
     <% count=0 %>
     <% ideas.forEach(function (idea) { %>
 
-    <div class="card card-body mb-2">
+    <div class="card card-body mb-3">
         <h4><%= idea.title %></h4>
         <p style="color: darkgrey"><%= idea.details %></p>
         <a style="width:100px" class="btn btn-dark mb-2" href="/ideas/edit/<%= idea.id %>">Edit</a>
