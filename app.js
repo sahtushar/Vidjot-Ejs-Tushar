@@ -116,8 +116,8 @@ app.use("/ideas", ideas);
 //everything that goes with /users should go to the routes/users.
 app.use("/users" ,users);
 
-const port = process.env.PORT ||5000;
+const port = process.env.PORT ||5001;
 app.listen(port, () => {
-    console.log('server started at 5000');
+    console.log(`server started at ${port}`);
 
 });
