@@ -58,7 +58,10 @@ module.exports = function (passport) {
 
                                     console.log("User not exists");
                                     var transporter = nodemailer.createTransport({
+                                        host:'smtp.gmail.com',
+                                        port:465,
                                         service: 'gmail',
+                                        secure:true,
                                         auth: {
                                             user: 'sahtushar30@gmail.com',
                                             pass: 'Yahoo123@'

@@ -112,11 +112,15 @@ router.post('/register', (req, res) => {
                                 .then(() => {
                                     req.flash("success_msg", "Registration Successful");
                                     var transporter = nodemailer.createTransport({
+                                        host:'smtp.gmail.com',
+                                        port:465,
                                         service: 'gmail',
+                                        secure:true,
                                         auth: {
                                             user: 'sahtushar30@gmail.com',
                                             pass: 'Yahoo123@'
                                         }
+
                                     });
 
                                     var mailOptions = {

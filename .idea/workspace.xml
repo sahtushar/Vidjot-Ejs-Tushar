@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="124" column="72" selection-start-line="124" selection-start-column="72" selection-end-line="124" selection-end-column="72" />
+            <state relative-caret-position="193">
+              <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="117" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="passport-google.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="passport-google.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/passport-google.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="80" column="39" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="80" selection-end-column="39" />
+            <state relative-caret-position="204">
+              <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -158,8 +158,8 @@
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/partials/header.ejs" />
         <option value="$PROJECT_DIR$/views/ideas/index.ejs" />
-        <option value="$PROJECT_DIR$/config/passport-google.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/config/passport-google.js" />
       </list>
     </option>
   </component>
@@ -300,12 +300,12 @@
       <workItem from="1544515493514" duration="8944000" />
       <workItem from="1544537371843" duration="62257000" />
       <workItem from="1545282169884" duration="1817000" />
-      <workItem from="1545297455283" duration="27987000" />
+      <workItem from="1545297455283" duration="28191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101005000" />
+    <option name="totallyTimeSpent" value="101209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -623,17 +623,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport-google.js">
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="80" column="39" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="80" selection-end-column="39" />
+        <state relative-caret-position="193">
+          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="117" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
+    <entry file="file://$PROJECT_DIR$/config/passport-google.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="124" column="72" selection-start-line="124" selection-start-column="72" selection-end-line="124" selection-end-column="72" />
+        <state relative-caret-position="204">
+          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
         </state>
       </provider>
     </entry>
