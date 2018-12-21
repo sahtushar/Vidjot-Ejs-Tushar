@@ -20,7 +20,7 @@
 
 
 
-            <form method="post" action="/users/login">
+            <form method="post" action="/users/login" class="mb-2">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" name="email" class="form-control" required>
@@ -31,7 +31,10 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a  href="/users/register" class="btn btn-danger">Register</a>
-                <a  href="/google-auth/google/callback" class="btn btn-danger">Google+ Login</a>
+
+            </form>
+            <form action="/google-auth/google/callback" method="GET">
+                <button type="submit" class="loginBtn loginBtn--google">Login with Google</button>
             </form>
         </div>
     </div>

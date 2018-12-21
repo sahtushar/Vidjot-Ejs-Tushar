@@ -7,16 +7,6 @@ const Idea = mongoose.model('ideas');
 
 const {ensureAuthenticated} = require('../helpers/auth');
 
-
-router.get('/add', ensureAuthenticated, (req, res) => {
-    console.log("/add", req.user.firstUser);
-    let errors = [];
-    res.render('ideas/add', {
-        errors: errors
-    });
-
-});
-
 //getting the idea page
 router.get('/', ensureAuthenticated, (req, res) => {
     console.log("/", req.user.firstUser);
@@ -33,6 +23,20 @@ router.get('/', ensureAuthenticated, (req, res) => {
 
         })
 });
+
+router.get('/add', ensureAuthenticated, (req, res) => {
+    console.log("/add", req.user.firstUser);
+    let errors = [];
+    res.render('ideas/add', {
+        errors: errors,
+        title: req.body.title,
+        details: req.body.details
+    });
+
+});
+
+
+
 
 
 //this is for process form
