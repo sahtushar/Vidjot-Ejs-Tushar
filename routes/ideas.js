@@ -56,8 +56,6 @@ router.post('/add', (req, res) => {
             errors: errors,
             title: req.body.title,
             details: req.body.details
-
-
         });
     }
     else {

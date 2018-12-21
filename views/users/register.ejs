@@ -16,7 +16,7 @@
     <div class="card card-body">
 
       <h3 class="text-center">Account Register</h3>
-      <form action="/users/register" method="POST">
+      <form action="/users/register" method="POST" class="mb-2">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" name="name" required value="<%=name%>">
@@ -34,7 +34,10 @@
           <input type="password" name="password2" class="form-control" required value="<%=password2%>">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a  href="/google-auth/google/callback" class="btn btn-danger">Google+ Login</a>
+
+      </form>
+      <form action="/google-auth/google/callback" method="GET">
+        <button type="submit" class="loginBtn loginBtn--google">Login with Google</button>
       </form>
     </div>
   </div>
