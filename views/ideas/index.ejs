@@ -2,19 +2,22 @@
 <%- include('../partials/_navbar.ejs') %>
 <div class="container">
 
-
+<%if(!user.firstUser){%>
     <div class="card card-body mb-4">
-        <h2 class="mb-3" >Welcome <%=user.name%></h2>
+        <h2 class="mb-3">Welcome <%= user.name %></h2>
         <a style="width:100px" class="btn btn-dark mb-2" href="/ideas/add/">Add Idea</a>
+
     </div>
+<%}%>
+
     <% if(success_msg.length > 0){ %>
 
     <div class="alert alert-success">
         <%= success_msg %>
 
     </div>
-    <% } %>
 
+    <% } %>
     <% if(error_msg.length > 0){ %>
 
     <div class="alert alert-danger">
@@ -22,7 +25,9 @@
 
     </div>
     <% } %>
-    <% count=0 %>
+
+
+    <% count = 0 %>
     <% ideas.forEach(function (idea) { %>
 
     <div class="card card-body mb-3">

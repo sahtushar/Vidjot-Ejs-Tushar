@@ -4,7 +4,7 @@ const UserSchema = new Schema({
 
     name: {
         type: String,
-        required: true
+
     },
 
     email: {
@@ -14,12 +14,27 @@ const UserSchema = new Schema({
 
     password: {
         type: String,
-        required: true
+        default:""
     },
     date: {
         type: Date,
         default: Date.now()
+    },
+
+    googleID:{
+        type:String,
+        default:""
+    },
+    image:{
+        type:String
+    },
+    firstUser:{
+        type:Boolean,
+        default:true
     }
+
+
+
 
 
 });

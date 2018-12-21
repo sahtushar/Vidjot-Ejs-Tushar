@@ -6,40 +6,50 @@ const bcrypt= require('bcryptjs');
 require('../models/users');
 const User=mongoose.model('users');
 
-module.exports=((passport)=>{
+module.exports=((passport,req,res)=>{
 
 
     passport.use(new LocalStrategy(
         {
             usernameField: 'email'  //given email
-        },(email, password, done)=>
+        },
+        (email, password, done)=>
              {
                    User.findOne({
                        email:email
                    })
-                       .then(user =>{
-                           if(!user)
-                           {
+                       .then(user => {
+                           if (!user) {
                                console.log("no user");
 
-                               return done(null, false , {message:'No user matched'})
+                               return done(null, false, {message: 'No user matched'})
                            }
 
+                           // if(user.googleID.length>0)
+                           // {
+                           //
+                           //     return done(null, false, user);
+                           // }
+
+
                            //match password
-                           bcrypt.compare(password,user.password,(err,isMatch)=>{
+                           if (password && password.length > 0){
+                               console.log("compare password");
 
-                               if(err) throw err;
-                               if(isMatch){
-                                   console.log("True")
-                                   return done(null,user);
-                               }
-                               else
-                               {
-                                   console.log("False")
-                                   return done(null,false,user,{message:'Password Incorrect'})
-                               }
+                               bcrypt.compare(password, user.password, (err, isMatch) => {
 
-                           })
+                                   if (err) throw err;
+                                   if (isMatch) {
+                                       console.log("True")
+                                       return done(null, user);
+                                   }
+                                   else {
+                                       console.log("False")
+                                       return done(null, false, user, {message: 'Password Incorrect'})
+                                   }
+
+                               })
+                       }
                        })
 
              }));

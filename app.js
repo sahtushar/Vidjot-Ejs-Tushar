@@ -5,10 +5,14 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const app = express();
 const db=require('./config/database');
-const ideas = require('./routes/ideas');//for routes
+
+//for routes
+const ideas = require('./routes/ideas');
 const users =require('./routes/users');
+const google_auth=require('./routes/google-auth');
 const session = require('express-session');
 const passport=require('passport');
+
 //view engine
 console.log("Mongo URLS",db.mongoURI);
 mongoose.connect(db.mongoURI, {
@@ -26,6 +30,7 @@ const Idea = mongoose.model('ideas');
 
 //Passport Config
 require('./config/passport')(passport);
+require('./config/passport-google')(passport)
 
 app.locals.message = app.locals.message || null;
 //setting engine
@@ -116,7 +121,10 @@ app.use("/ideas", ideas);
 //everything that goes with /users should go to the routes/users.
 app.use("/users" ,users);
 
-const port = process.env.PORT ||5001;
+
+app.use('/google-auth',google_auth);
+
+const port = process.env.PORT ||5002;
 app.listen(port, () => {
     console.log(`server started at ${port}`);
 

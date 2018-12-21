@@ -1,10 +1,18 @@
 module.exports=({
 
-    ensureAuthenticated:
-        function(req,res,next)
+    ensureAuthenticated: function(req,res,next)
     {
+
         if(req.isAuthenticated()){
-            return next();
+            console.log(req.user.firstUser);
+            if(req.user.firstUser===false) {
+                return next();
+            }
+            else{
+                console.log("set password first");
+                req.flash("error_msg","Set Password first")
+                res.redirect('/users/setPassword');
+            }
         }
         else {
             console.log("not authenticated");
