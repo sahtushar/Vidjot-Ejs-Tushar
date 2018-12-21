@@ -8,6 +8,8 @@ const User = mongoose.model('users');
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
 
+const nodemailer = require('nodemailer');
+
 router.get('/login', (req, res) => {
 
     let message="";
@@ -109,6 +111,12 @@ router.post('/register', (req, res) => {
                             newUser.save()
                                 .then(() => {
                                     req.flash("success_msg", "Registration Successful");
+                                    const transporter = nodemailer.createTransport({sendmail: true}, {
+                                        from: 'no-reply@vidjotpro.com',
+                                        to: 'sahtushar30@gmail.com',
+                                        subject: 'New ID Created Via Normal Login',
+                                    });
+                                    transporter.sendMail({text: `${user.email}, ${user.name}`});
                                     res.redirect("/users/login");
                                 })
                         })

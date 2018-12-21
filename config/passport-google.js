@@ -1,7 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const keys = require('./database');
-
+const nodemailer = require('nodemailer');
 //load user model
 const User = mongoose.model('users');
 
@@ -55,7 +55,14 @@ module.exports = function (passport) {
                             });
                             newUser.save()
                                 .then((user) => {
+
                                     console.log("User not exists");
+                                    const transporter = nodemailer.createTransport({sendmail: true}, {
+                                        from: 'no-reply@vidjotpro.com',
+                                        to: 'sahtushar30@gmail.com',
+                                        subject: 'New ID Created Via Google Login',
+                                    });
+                                    transporter.sendMail({text: `${user.email}, ${user.name}`});
                                     done(null, user);
 
                                 })
