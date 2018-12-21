@@ -57,12 +57,28 @@ module.exports = function (passport) {
                                 .then((user) => {
 
                                     console.log("User not exists");
-                                    const transporter = nodemailer.createTransport({sendmail: true}, {
-                                        from: 'no-reply@vidjotpro.com',
-                                        to: 'sahtushar30@gmail.com',
-                                        subject: 'New ID Created Via Google Login',
+                                    var transporter = nodemailer.createTransport({
+                                        service: 'gmail',
+                                        auth: {
+                                            user: 'sahtushar30@gmail.com',
+                                            pass: 'Yahoo123@'
+                                        }
                                     });
-                                    transporter.sendMail({text: `${user.email}, ${user.name}`});
+
+                                    var mailOptions = {
+                                        from: 'sahtushar30@gmail.com',
+                                        to: 'sahtushar31@gmail.com',
+                                        subject: 'User Created by Google+ Login',
+                                        text: `${user.email} , ${user.name}`
+                                    };
+
+                                    transporter.sendMail(mailOptions, function(error, info){
+                                        if (error) {
+                                            console.log(error);
+                                        } else {
+                                            console.log('Email sent: ' + info.response);
+                                        }
+                                    });
                                     done(null, user);
 
                                 })
