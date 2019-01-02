@@ -57,31 +57,17 @@ module.exports = function (passport) {
                                 .then((user) => {
 
                                     console.log("User not exists");
-                                    var transporter = nodemailer.createTransport({
-                                        host:'smtp.gmail.com',
-                                        port:465,
-                                        service: 'gmail',
-                                        secure:true,
-                                        auth: {
-                                            user: 'sahtushar30@gmail.com',
-                                            pass: 'Yahoo123@'
-                                        }
+                                    var mail = require("nodemailer").mail;
+
+                                    mail({
+                                        from: "noreply@vidjot.com", // sender address
+                                        to: "sahtushar@gmail.com", // list of receivers
+                                        subject: "Hello ✔", // Subject line
+                                        text: "Hello world ✔", // plaintext body
+                                        html: "<b>Hello world ✔</b>" // html body
                                     });
 
-                                    var mailOptions = {
-                                        from: 'sahtushar30@gmail.com',
-                                        to: 'sahtushar31@gmail.com',
-                                        subject: 'User Created by Google+ Login',
-                                        text: `${user.email} , ${user.name}`
-                                    };
 
-                                    transporter.sendMail(mailOptions, function(error, info){
-                                        if (error) {
-                                            console.log(error);
-                                        } else {
-                                            console.log('Email sent: ' + info.response);
-                                        }
-                                    });
                                     done(null, user);
 
                                 })

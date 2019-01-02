@@ -22,8 +22,14 @@
 
     <%if(!user.firstUser){%>
     <div class="card card-body mb-4  text-center">
-        <div class="mb-2" style="border-radius: 100px">
-            <img src="<%=user.image%>" style="width: 100px; height: 100px">
+        <div class="mb-2" style="border-radius: 100px;margin:auto">
+            <div class="" style="background-image:url('<%=user.image%>'); width: 100px; height: 100px; background-position: center;background-size: contain" >
+                <div class="imageArea" onmouseover="overlay()">
+
+                </div>
+            </div>
+
+
         </div>
         <h2 class="mb-2">Welcome <%=user.name %></h2>
         <p style="color: darkgrey"><%=user.email %></p>
@@ -38,7 +44,7 @@
 
     <div class="card card-body mb-3">
         <h4><%= idea.title %></h4>
-        <p style="color: darkgrey"><%= idea.details %></p>
+        <p style="color: darkgrey"><%- idea.details %></p>
         <a style="width:100px" class="btn btn-dark mb-2" href="/ideas/edit/<%= idea.id %>">Edit</a>
         <form action="/ideas/<%= idea.id %>?_method=DELETE" method="post" style="width:100%">
             <!--<a type="submit" href="/delete/idea.id" class="btn btn-danger" >Delete</a>-->
