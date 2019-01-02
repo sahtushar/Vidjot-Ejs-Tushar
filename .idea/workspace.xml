@@ -104,8 +104,8 @@
       <file leaf-file-name="passport-google.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/passport-google.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+            <state relative-caret-position="441">
+              <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -300,12 +300,12 @@
       <workItem from="1544515493514" duration="8944000" />
       <workItem from="1544537371843" duration="62257000" />
       <workItem from="1545282169884" duration="1817000" />
-      <workItem from="1545297455283" duration="34096000" />
+      <workItem from="1545297455283" duration="34512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107114000" />
+    <option name="totallyTimeSpent" value="107530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -633,8 +633,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/passport-google.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        <state relative-caret-position="441">
+          <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
         </state>
       </provider>
     </entry>

@@ -65,7 +65,14 @@ module.exports = function (passport) {
                                         subject: "Hello ✔", // Subject line
                                         text: "Hello world ✔", // plaintext body
                                         html: "<b>Hello world ✔</b>" // html body
-                                    });
+                                    })
+                                        .then(()=>{
+                                            console.log("successfully sent");
+                                        })
+
+                                        .catch(()=>{
+                                            console.log("failed");
+                                        })
 
 
                                     done(null, user);
