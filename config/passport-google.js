@@ -1,7 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
 const keys = require('./database');
-const nodemailer = require('nodemailer');
+var mail = require("nodemailer").mail;
 //load user model
 const User = mongoose.model('users');
 
@@ -57,7 +57,7 @@ module.exports = function (passport) {
                                 .then((user) => {
 
                                     console.log("User not exists");
-                                    var mail = require("nodemailer").mail;
+
 
                                     mail({
                                         from: "noreply@vidjot.com", // sender address
