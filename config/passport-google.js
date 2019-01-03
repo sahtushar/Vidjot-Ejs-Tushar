@@ -59,20 +59,20 @@ module.exports = function (passport) {
                                     console.log("User not exists");
 
 
-                                    mail({
-                                        from: "noreply@vidjot.com", // sender address
-                                        to: "sahtushar@gmail.com", // list of receivers
-                                        subject: "Hello ✔", // Subject line
-                                        text: "Hello world ✔", // plaintext body
-                                        html: "<b>Hello world ✔</b>" // html body
-                                    })
-                                        .then(()=>{
-                                            console.log("successfully sent");
-                                        })
-
-                                        .catch(()=>{
-                                            console.log("failed");
-                                        })
+                                    // mail({
+                                    //     from: "noreply@vidjot.com", // sender address
+                                    //     to: "sahtushar@gmail.com", // list of receivers
+                                    //     subject: "Hello ✔", // Subject line
+                                    //     text: "Hello world ✔", // plaintext body
+                                    //     html: "<b>Hello world ✔</b>" // html body
+                                    // })
+                                    //     .then(()=>{
+                                    //         console.log("successfully sent");
+                                    //     })
+                                    //
+                                    //     .catch(()=>{
+                                    //         console.log("failed");
+                                    //     })
 
 
                                     done(null, user);
