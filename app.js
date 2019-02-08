@@ -7,7 +7,7 @@ const app = express();
 const db=require('./config/database');
 
 //for routes
-const ideas = require('./routes/ideas');
+const ideas = require('./routes/feedback');
 const users =require('./routes/users');
 const google_auth=require('./routes/google-auth');
 const session = require('express-session');
@@ -98,7 +98,7 @@ app.get('/delete/:id', (req, res) => {
         .then(() => {
 
             req.flash("success_msg", "Successfully Deleted");
-            res.redirect('/ideas');
+            res.redirect('/feedback');
         });
 
 });
@@ -110,13 +110,13 @@ app.post('/update/:id', (req, res) => {
     Idea.findOneAndUpdate(id, {title: req.body.title, details: req.body.details})
         .then(() => {
             req.flash("success_msg", "Successfully Updated");
-            res.redirect('/ideas');
+            res.redirect('/feedback');
         })
 
 });
 
-//everything that goes with /ideas should go to the routes/ideas.
-app.use("/ideas", ideas);
+//everything that goes with /feedback should go to the routes/feedback.
+app.use("/feedback", ideas);
 
 //everything that goes with /users should go to the routes/users.
 app.use("/users" ,users);

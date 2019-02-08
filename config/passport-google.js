@@ -27,21 +27,36 @@ module.exports = function (passport) {
                         if (user) {
 
                             if (user.googleID.length > 0) {
+                                if(profile.domain==="appstreet.io") {
 
-                                console.log("Google User exists");
-                                done(null, user);
+                                    console.log("Google User exists");
+                                    done(null, user);
+                                }
+                                else
+                                {
+                                    console.log("only igdtuw mail allowed");
+                                    done(null,false);
+                                }
                             }
                             else {
 
-                                const newUser = new User({
-                                    googleID: profile.id,
-                                    image: image
-                                });
-                                newUser.save()
-                                    .then((user) => {
-                                        done(null, user);
-                                    })
+                                if (profile.domain === "appstreet.io") {
+                                    const newUser = new User({
+                                        googleID: profile.id,
+                                        image: image
+                                    });
+                                    newUser.save()
+                                        .then((user) => {
+                                            done(null, user);
+                                        })
+                                }
+                                else{
+                                    console.log("Only igdtuw mail allowed");
+                                    done(null, false);
+
+                                }
                             }
+
 
                         }
                         else {
@@ -57,24 +72,6 @@ module.exports = function (passport) {
                                 .then((user) => {
 
                                     console.log("User not exists");
-
-
-                                    // mail({
-                                    //     from: "noreply@vidjot.com", // sender address
-                                    //     to: "sahtushar@gmail.com", // list of receivers
-                                    //     subject: "Hello ✔", // Subject line
-                                    //     text: "Hello world ✔", // plaintext body
-                                    //     html: "<b>Hello world ✔</b>" // html body
-                                    // })
-                                    //     .then(()=>{
-                                    //         console.log("successfully sent");
-                                    //     })
-                                    //
-                                    //     .catch(()=>{
-                                    //         console.log("failed");
-                                    //     })
-
-
                                     done(null, user);
 
                                 })

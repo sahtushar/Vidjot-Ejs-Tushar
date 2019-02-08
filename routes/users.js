@@ -111,32 +111,6 @@ router.post('/register', (req, res) => {
                             newUser.save()
                                 .then(() => {
                                     req.flash("success_msg", "Registration Successful");
-                                    // var transporter = nodemailer.createTransport({
-                                    //     host:'smtp.gmail.com',
-                                    //     port:465,
-                                    //     service: 'gmail',
-                                    //     secure:true,
-                                    //     auth: {
-                                    //         user: 'sahtushar30@gmail.com',
-                                    //         pass: 'Yahoo123@'
-                                    //     }
-                                    //
-                                    // });
-                                    //
-                                    // var mailOptions = {
-                                    //     from: 'sahtushar30@gmail.com',
-                                    //     to: 'sahtushar31@gmail.com',
-                                    //     subject: 'User Created by Normal Login',
-                                    //     text: `${user.email} , ${user.name}`
-                                    // };
-                                    //
-                                    // transporter.sendMail(mailOptions, function(error, info){
-                                    //     if (error) {
-                                    //         console.log(error);
-                                    //     } else {
-                                    //         console.log('Email sent: ' + info.response);
-                                    //     }
-                                    // });
                                     res.redirect("/users/login");
                                 })
                         })
@@ -162,7 +136,7 @@ router.post('/login', (req,res,next)=>{
 
 
     passport.authenticate('local',{
-        successRedirect:'/ideas',
+        successRedirect:'/feedback',
         failureRedirect:'/users/login?message=Wrong password or user does not exists',
         failureFlash:true,
 
@@ -205,7 +179,7 @@ router.post('/setPassword', (req, res) => {
                         .then((user) => {
                             req.flash("success_msg", "Password Set Successfully");
                             console.log(user.firstUser);
-                            res.redirect("/ideas");
+                            res.redirect("/feedback");
                         })
                 })
             })
